@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         primary: ['Inter', ...defaultTheme.fontFamily.sans],
+        katibeh: ['Katibeh', 'sans-serif'],
       },
       colors: {
         primary: {
@@ -24,6 +25,12 @@ export default {
           950: 'rgb(var(--tw-color-primary-950) / <alpha-value>)',
         },
         dark: '#222222',
+        custom: {
+          'color-with-opacity': 'rgba(255, 255, 255, 0.80)',
+        },
+      },
+      textShadow: {
+        custom: '4px 10px 15px rgba(0, 0, 0, 0.80)',
       },
       keyframes: {
         flicker: {
