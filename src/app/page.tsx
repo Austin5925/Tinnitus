@@ -31,7 +31,7 @@ export default function HomePage() {
   return (
     <main>
       <Head>
-        <title>Tinnitus beta</title>
+        <title>Tinnitus</title>
       </Head>
       <section className='bg-white relative h-screen'>
         <div
