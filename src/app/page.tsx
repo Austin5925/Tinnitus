@@ -7,13 +7,6 @@ import * as React from 'react';
 import '@/lib/env';
 
 import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-
-//interface Props {}
-// 定义 props 的类型
-interface NavigationItemProps {
-  name: string;
-}
 
 /**
  * SVGR Support
@@ -29,31 +22,27 @@ interface NavigationItemProps {
 
 export default function HomePage() {
   return (
-    <main>
+    <div>
+      {/* className='flex gap-24 relative inset-0 bg-[url("/images/IndexBgSrc.png")] bg-cover bg-center' */}
+      {/* 这里转换为 tailwind 略有问题，到时候再研究*/}
+
+      {/* ISSUE#01：关于背景图片 */}
+
       <Head>
         <title>Tinnitus</title>
       </Head>
-      <section className='bg-white relative h-screen'>
-        <div
-          style={{
-            backgroundImage: 'url("/images/IndexBgSrc.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: '100vh',
-          }}
-        >
-          <div className='flex text-2xl justify-start items-start text-white w-full'>
+      <div className='relative m-0 w-full z-0'>
+        <div className='px-4'>
+          {/* <div className='flex text-2xl justify-start items-start text-white w-full'>
             <NavigationItem name='Tinnitus' />
             <NavigationItem name='Category' />
             <NavigationItem name='Archives' />
             <NavigationItem name='Contact' />
             <NavigationItem name='About' />
             <div className='flex-grow'></div>
-          </div>
-          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
+          </div> */}
+          <div className='relative flex flex-col items-center justify-center text-center'>
             {/* <Logo className='w-16' /> */}
-
-            <h1 className='mt-4'>Tinnitus</h1>
             {/* <p className='mt-2 text-sm text-gray-800'>123 </p> */}
 
             {/* <div className='relative h-screen'>
@@ -62,15 +51,13 @@ export default function HomePage() {
                 />
               </div>
             </div> */}
-
-            <div className='absolute top-[50%] left-[50%] transform -translate-x-[25%] -translate-y-[30%] -mt-10 w-full h-full'>
-              <Image
-                src='/favicon/TinnitusBigIcon2.png'
-                alt='描述'
-                width={500}
-                height={300}
-              />
-            </div>
+            <Image
+              src='/favicon/TinnitusBigIcon2.png'
+              alt='描述'
+              width={500}
+              height={300}
+            />
+            <h1 className='mt-4'>Tinnitus</h1>
             {/* <p className='mt-2 text-sm text-gray-700'>
               <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
                 See the repository
@@ -81,28 +68,52 @@ export default function HomePage() {
               查看虎哥主页
             </ButtonLink>
           </div>
-
-          <div className='bg-black h-screen flex items-center justify-center'>
-            {/* TODO */}
-            <p className='text-white'>TODO</p>
-          </div>
-
-          <footer className='absolute flex-col text-center justify-center items-center bottom-2 text-gray-700'>
-            © {new Date().getFullYear()} By{' '}
-            <UnderlineLink href='https://www.google.com'>
-              Ning Huang Studio
-            </UnderlineLink>
-          </footer>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
 
-const NavigationItem: React.FC<NavigationItemProps> = ({ name }) => {
-  return (
-    <li className='mr-4'>
-      <UnderlineLink href={`/${name}`}>{name}</UnderlineLink>
-    </li>
-  );
-};
+// const NavigationItem: React.FC<NavigationItemProps> = ({ name }) => {
+//   return (
+//     <li className='mr-4'>
+//       <UnderlineLink href={`/${name}`}>{name}</UnderlineLink>
+//     </li>
+//   );
+// };
+
+// HOME.MODULE.CSS CODE DEPRECATED
+// @media (min-width: 1025px) {
+//   .container {
+//     /* 确保容器在宽屏幕上水平居中，并允许它根据内容自动调整宽度 */
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+//   }
+
+//   .buttons {
+//     /* 如果希望按钮组在宽屏幕上也居中对齐 */
+//     justify-content: center;
+//   }
+// }
+
+// @media (max-width: 1024px) {
+//   .container {
+//     flex-direction: column;
+//     text-align: center;
+//   }
+
+//   .buttons {
+//     justify-content: center;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .title {
+//     font-size: 64px;
+//   }
+
+//   .brands {
+//     width: 100%;
+//   }
+// }
