@@ -1,14 +1,18 @@
 import { Metadata } from 'next';
 import * as React from 'react';
+import { lazy, Suspense } from 'react';
 
 import '@/styles/globals.css';
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 import '@/styles/colors.css';
 
 import Footer from '@/components/footer/Footer';
-import Navbar from '@/components/navbar/Navbar';
 
+// import Navbar from '@/components/navbar/Navbar';
 import { siteConfig } from '@/constant/config';
+
+const Navbar = lazy(() => import('@/components/navbar/Navbar'));
+// 动态导入 Navbar 组件
 
 // !STARTERCONF Change these default meta
 // !STARTERCONF Look at @/constant/config to change them
@@ -58,12 +62,36 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html>
-      <body className='relative inset-0 bg-[url("/images/IndexBgSrc.png")] bg-cover bg-center bg-no-repeat min-h-screen shadow-lg w-full'>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <>
+      <html>
+        <body className='relative inset-0 bg-[url("/images/IndexBgSrc.png")] bg-cover bg-center bg-no-repeat min-h-screen shadow-lg w-full'>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Navbar />
+          </Suspense>
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </>
   );
 }
+
+// !STARTERCONF 异步加载 Navbar
+
+// import React, { Suspense } from 'react';
+
+// export default function RootLayout({ children }) {
+//   return (
+//     <>
+//       <html>
+//         <body className='relative inset-0 bg-[url("/images/IndexBgSrc.png")] bg-cover bg-center bg-no-repeat min-h-screen shadow-lg w-full'>
+//           <Suspense fallback={<div>Loading...</div>}>
+//             <Navbar />
+//           </Suspense>
+//           {children}
+//           <Footer />
+//         </body>
+//       </html>
+//     </>
+//   );
+// }

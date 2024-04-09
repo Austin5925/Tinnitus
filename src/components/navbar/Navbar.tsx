@@ -5,7 +5,7 @@ import Links from './navbarLinks/Links';
 
 // import { auth } from '@/lib/auth';
 
-const Navbar = async () => {
+const Navbar = () => {
   // const session = await auth();
 
   return (
