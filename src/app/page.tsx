@@ -78,7 +78,7 @@ export default function HomePage() {
               lobortis mauris eget et pellentesque.
               <p className='text-right'>--Ning(2024)</p>
             </div>
-            <div className='flex items-center space-x-4 transform translate-x-20 translate-y-72 md:-translate-x-64 md:-translate-y-72 lg:translate-x-96 lg:translate-y-72'>
+            <div className='flex items-center space-x-4 transform translate-x-20 translate-y-72 md:translate-x-64 md:translate-y-72 lg:translate-x-96 lg:translate-y-72'>
               <a
                 href='https://www.google.com'
                 target='_blank'
