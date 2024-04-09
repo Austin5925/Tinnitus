@@ -6,7 +6,7 @@ import Image from 'next/image';
 import * as React from 'react';
 import '@/lib/env';
 
-import ButtonLink from '@/components/links/ButtonLink';
+import styles from './home.module.css';
 
 /**
  * SVGR Support
@@ -33,14 +33,6 @@ export default function HomePage() {
       </Head>
       <div className='relative m-0 w-full z-0'>
         <div className='px-4'>
-          {/* <div className='flex text-2xl justify-start items-start text-white w-full'>
-            <NavigationItem name='Tinnitus' />
-            <NavigationItem name='Category' />
-            <NavigationItem name='Archives' />
-            <NavigationItem name='Contact' />
-            <NavigationItem name='About' />
-            <div className='flex-grow'></div>
-          </div> */}
           <div className='relative flex flex-col items-center justify-center text-center'>
             {/* <Logo className='w-16' /> */}
             {/* <p className='mt-2 text-sm text-gray-800'>123 </p> */}
@@ -53,20 +45,82 @@ export default function HomePage() {
             </div> */}
             <Image
               src='/favicon/TinnitusBigIcon2.png'
-              alt='描述'
-              width={500}
-              height={300}
+              alt='Tinnitus Logo'
+              width={750}
+              height={450}
+              className='mt-12 mr-80'
             />
-            <h1 className='mt-4'>Tinnitus</h1>
+            <p className={styles.graytext}>
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+              Szumy uszne طنين Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus
+              Acouphène Szumy uszne طنين 耳鸣 Acouphène Szumy uszne طنين 耳鸣
+              Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Szumy uszne طنين
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+              Szumy uszne طنين Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus
+              Acouphène Szumy uszne طنين 耳鸣 Acouphène Szumy uszne طنين 耳鸣
+              Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Szumy uszne طنين
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+              Szumy uszne طنين Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus
+              Acouphène Szumy uszne طنين 耳鸣 Acouphène Szumy uszne طنين 耳鸣
+              Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Szumy uszne طنين
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+              Szumy uszne طنين Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus
+              Acouphène Szumy uszne طنين 耳鸣 Acouphène Szumy uszne طنين 耳鸣
+              Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Szumy uszne طنين
+              耳鸣 Tinnitus Acouphène Szumy uszne طنين 耳鸣 Tinnitus Acouphène
+            </p>
+            <div className={styles.ningquote}>
+              Lorem ipsum dolor sit amet consectetur. Egestas tortor semper elit
+              dolor vitae ultricies pharetra in. Volutpat elit posuere eget non
+              lobortis mauris eget et pellentesque.
+              <p className='text-right'>--Ning(2024)</p>
+            </div>
+            <div className='flex items-center space-x-4 transform translate-x-20 translate-y-72 md:-translate-x-64 md:-translate-y-72 lg:translate-x-96 lg:translate-y-72'>
+              <Image
+                src='/svg/instagram.svg'
+                alt='Instagram'
+                width={40}
+                height={40}
+              />
+              <Image
+                src='/svg/twitter.svg'
+                alt='Twitter'
+                width={40}
+                height={40}
+              />
+              <Image
+                src='/svg/facebook.svg'
+                alt='Facebook'
+                width={40}
+                height={40}
+              />
+            </div>
+            <div>
+              <div>
+                <Image
+                  src='/svg/arrowdown.svg'
+                  alt='Arrow Down'
+                  width={120}
+                  height={120}
+                  className='transform translate-y-48'
+                />
+              </div>
+              <div className='text-white transform translate-y-52 text-center font-normal text-2xl'>
+                Recent
+              </div>
+            </div>
             {/* <p className='mt-2 text-sm text-gray-700'>
               <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
                 See the repository
               </ArrowLink>
             </p> */}
 
-            <ButtonLink className='mt-6' href='/components' variant='light'>
+            {/* <ButtonLink className='mt-6' href='/components' variant='light'>
               查看虎哥主页
-            </ButtonLink>
+            </ButtonLink> */}
           </div>
         </div>
       </div>
