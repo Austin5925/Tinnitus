@@ -47,38 +47,3 @@
   flex: 1;
   position: relative;
 }
-
-@media (min-width: 1025px) {
-  .container {
-    /* 确保容器在宽屏幕上水平居中，并允许它根据内容自动调整宽度 */
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .buttons {
-    /* 如果希望按钮组在宽屏幕上也居中对齐 */
-    justify-content: center;
-  }
-}
-
-@media (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .buttons {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 64px;
-  }
-
-  .brands {
-    width: 100%;
-  }
-}

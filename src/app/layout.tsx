@@ -59,7 +59,7 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <body>
+      <body className='relative inset-0 bg-[url("/images/IndexBgSrc.png")] bg-cover bg-center bg-no-repeat min-h-screen shadow-lg w-full'>
         <Navbar />
         {children}
         <Footer />
