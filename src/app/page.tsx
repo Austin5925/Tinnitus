@@ -21,6 +21,14 @@ import styles from './home.module.css';
 // to customize the default configuration.
 
 export default function HomePage() {
+  const scrollToContent = () => {
+    const section = document.querySelector('.recent-content-section');
+    if (section) {
+      // ts null 检查
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div>
       {/* className='flex gap-24 relative inset-0 bg-[url("/images/IndexBgSrc.png")] bg-cover bg-center' */}
@@ -31,7 +39,7 @@ export default function HomePage() {
       <Head>
         <title>Tinnitus</title>
       </Head>
-      <div className='relative m-0 w-full z-0'>
+      <div className='relative m-0 w-full z-0 h-screen'>
         <div className='px-4'>
           <div className='relative flex flex-col items-center justify-center text-center'>
             {/* <Logo className='w-16' /> */}
@@ -116,8 +124,8 @@ export default function HomePage() {
                 />
               </a>
             </div>
-            <div>
-              <div>
+            <div className='arrow-down'>
+              <div onClick={scrollToContent}>
                 <Image
                   src='/svg/arrowdown.svg'
                   alt='Arrow Down'
@@ -142,6 +150,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      <div className='recent-content-section text-white py-4 min-h-screen relative'></div>
     </div>
   );
 }
