@@ -79,24 +79,42 @@ export default function HomePage() {
               <p className='text-right'>--Ning(2024)</p>
             </div>
             <div className='flex items-center space-x-4 transform translate-x-20 translate-y-72 md:-translate-x-64 md:-translate-y-72 lg:translate-x-96 lg:translate-y-72'>
-              <Image
-                src='/svg/instagram.svg'
-                alt='Instagram'
-                width={40}
-                height={40}
-              />
-              <Image
-                src='/svg/twitter.svg'
-                alt='Twitter'
-                width={40}
-                height={40}
-              />
-              <Image
-                src='/svg/facebook.svg'
-                alt='Facebook'
-                width={40}
-                height={40}
-              />
+              <a
+                href='https://www.google.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Image
+                  src='/svg/instagram.svg'
+                  alt='Instagram'
+                  width={40}
+                  height={40}
+                />
+              </a>
+              <a
+                href='https://www.google.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Image
+                  src='/svg/twitter.svg'
+                  alt='Twitter'
+                  width={40}
+                  height={40}
+                />
+              </a>
+              <a
+                href='https://www.google.com'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <Image
+                  src='/svg/facebook.svg'
+                  alt='Facebook'
+                  width={40}
+                  height={40}
+                />
+              </a>
             </div>
             <div>
               <div>
