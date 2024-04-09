@@ -7,13 +7,6 @@ import * as React from 'react';
 import '@/lib/env';
 
 import ButtonLink from '@/components/links/ButtonLink';
-import UnderlineLink from '@/components/links/UnderlineLink';
-
-//interface Props {}
-// 定义 props 的类型
-interface NavigationItemProps {
-  name: string;
-}
 
 /**
  * SVGR Support
@@ -29,28 +22,22 @@ interface NavigationItemProps {
 
 export default function HomePage() {
   return (
-    <main>
+    <div className='flex gap-24 relative inset-0 bg-[url("/images/IndexBgSrc.png")] bg-cover bg-center'>
+      {/* 这里转换为 tailwind 略有问题，到时候再研究 */}
       <Head>
         <title>Tinnitus</title>
       </Head>
-      <section className='bg-white relative h-screen'>
-        <div
-          style={{
-            backgroundImage: 'url("/images/IndexBgSrc.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            height: '100vh',
-          }}
-        >
-          <div className='flex text-2xl justify-start items-start text-white w-full'>
+      <div className='relative h-screen shadow-lg p-8 w-full'>
+        <div className='z-10 p-4'>
+          {/* <div className='flex text-2xl justify-start items-start text-white w-full'>
             <NavigationItem name='Tinnitus' />
             <NavigationItem name='Category' />
             <NavigationItem name='Archives' />
             <NavigationItem name='Contact' />
             <NavigationItem name='About' />
             <div className='flex-grow'></div>
-          </div>
-          <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
+          </div> */}
+          <div className='relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
             {/* <Logo className='w-16' /> */}
 
             <h1 className='mt-4'>Tinnitus</h1>
@@ -81,28 +68,16 @@ export default function HomePage() {
               查看虎哥主页
             </ButtonLink>
           </div>
-
-          <div className='bg-black h-screen flex items-center justify-center'>
-            {/* TODO */}
-            <p className='text-white'>TODO</p>
-          </div>
-
-          <footer className='absolute flex-col text-center justify-center items-center bottom-2 text-gray-700'>
-            © {new Date().getFullYear()} By{' '}
-            <UnderlineLink href='https://www.google.com'>
-              Ning Huang Studio
-            </UnderlineLink>
-          </footer>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
 
-const NavigationItem: React.FC<NavigationItemProps> = ({ name }) => {
-  return (
-    <li className='mr-4'>
-      <UnderlineLink href={`/${name}`}>{name}</UnderlineLink>
-    </li>
-  );
-};
+// const NavigationItem: React.FC<NavigationItemProps> = ({ name }) => {
+//   return (
+//     <li className='mr-4'>
+//       <UnderlineLink href={`/${name}`}>{name}</UnderlineLink>
+//     </li>
+//   );
+// };
