@@ -11,3 +11,11 @@
   background-color: var(--text);
   color: var(--tw-color-primary-100);
 }
+
+.loginButton {
+  background-color: var(--tw-color-primary-500);
+  color: azure;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}

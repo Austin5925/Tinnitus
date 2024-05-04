@@ -18,17 +18,25 @@ interface NavLinkProps {
 const NavLink: React.FC<NavLinkProps> = ({ item }) => {
   const pathName = usePathname();
 
-  return (
-    <Link
-      href={item.path}
-      className={`${styles.container} ${
-        pathName === item.path && styles.active
-      }`}
-      key={item.name}
-    >
-      {item.name}
-    </Link>
-  );
+  if (item.name === 'Login') {
+    return (
+      <Link href={item.path} className={`${styles.container}`} key={item.name}>
+        {item.name}
+      </Link>
+    );
+  } else {
+    return (
+      <Link
+        href={item.path}
+        className={`${styles.container} ${
+          pathName === item.path && styles.active
+        }`}
+        key={item.name}
+      >
+        {item.name}
+      </Link>
+    );
+  }
 };
 
 export default NavLink;

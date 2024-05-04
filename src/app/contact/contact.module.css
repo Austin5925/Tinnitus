@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-top: 100px;
+}
+
+.imgContainer {
+  margin-left: 60px;
+  flex: 1;
+  height: 500px;
+  position: relative;
+  color: azure;
+}
+
+.img {
+  object-fit: contain;
+}
+
+.formContainer {
+  flex: 1;
+  margin-right: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form input,
+.form textarea {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    rgba(var(--tw-color-slate-950), 0.6),
+    rgba(var(--tw-color-secondary-900), 0.6)
+  );
+  color: var(--text);
+}
+
+.form button {
+  padding: 20px;
+  background-color: var(--btn);
+  color: var(--text);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.submitButton {
+  width: 80%;
+  margin: 3px;
+  background-color: var(--btn);
+  color: var(--text);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.emailButton {
+  width: 10%;
+  background-color: var(--tw-color-primary-500);
+  color: azure;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
