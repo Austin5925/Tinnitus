@@ -9,6 +9,11 @@
   padding: 10px;
   cursor: pointer;
   font-weight: bold;
+  border-radius: 10px;
+  background-color: var(--tw-color-primary-100);
+  color: var(--tw-color-primary-500);
+  justify-content: end;
+  align-items: end;
 }
 
 .menuButton,
@@ -24,6 +29,9 @@
   .menuButton {
     display: block;
     cursor: pointer;
+    position: absolute;
+    top: 28px;
+    right: 28px;
   }
 
   .mobileLinks {

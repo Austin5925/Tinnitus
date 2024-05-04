@@ -1,6 +1,8 @@
 'use client';
 
+import Image from 'next/image';
 import React from 'react';
+import { useState } from 'react';
 
 import styles from './Links.module.css';
 
@@ -37,11 +39,11 @@ const links = [
 // : React.FC<LinksProps>
 
 const Links = () => {
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   // TEMPORARY
-  // const session = true;
-  // const isAdmin = true;
+  const session = true;
+  const isAdmin = true;
 
   return (
     <div className={styles.container}>
@@ -49,7 +51,34 @@ const Links = () => {
         {links.map((link) => (
           <NavLink item={link} key={link.name} />
         ))}
+        {session?.user ? (
+          <>
+            {session.user?.isAdmin && (
+              <NavLink item={{ name: 'Admin', path: '/admin' }} />
+            )}
+            <form action={handleLogout}>
+              <button className={styles.logout}>Logout</button>
+            </form>
+          </>
+        ) : (
+          <NavLink item={{ name: 'Login', path: '/login' }} />
+        )}
       </div>
+      <Image
+        className={styles.menuButton}
+        src='/svg/menu.png'
+        alt=''
+        width={30}
+        height={30}
+        onClick={() => setOpen((prev) => !prev)}
+      />
+      {open && (
+        <div className={styles.mobileLinks}>
+          {links.map((link) => (
+            <NavLink item={link} key={link.name} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

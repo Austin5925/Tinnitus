@@ -1,0 +1,77 @@
+import mongoose from 'mongoose';
+
+interface IPost extends mongoose.Document {
+  title: string;
+  desc: string;
+  img?: string;
+  slug: string;
+  userid: string;
+}
+
+interface IUser extends mongoose.Document {
+  username: string;
+  email: string;
+  password: string;
+  img?: string;
+  isAdmin: boolean;
+}
+
+const userSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      min: 3,
+      max: 20,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      max: 50,
+    },
+    password: {
+      type: String,
+    },
+    img: {
+      type: String,
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  { timestamps: true }
+);
+
+const postSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+    },
+    desc: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+    },
+    userid: {
+      type: String,
+      required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+  },
+  { timestamps: true }
+);
+
+export const User =
+  mongoose.models?.User || mongoose.model<IUser>('User', userSchema);
+export const Post =
+  mongoose.models?.Post || mongoose.model<IPost>('Post', postSchema);
