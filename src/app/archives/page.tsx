@@ -5,6 +5,11 @@ import { Post } from '@/lib/types/post';
 
 import PostCard from '@/components/postCard/postCard';
 
+export const metadata = {
+  title: 'Archives',
+  description: 'Archives of Tinnitus articles',
+};
+
 const ArchivesPage = async () => {
   // FETCH DATA WITHOUT AN API
   // 关于此处异步用法的实践：和 useEffect 的对比
