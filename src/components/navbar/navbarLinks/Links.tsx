@@ -6,7 +6,8 @@ import { useState } from 'react';
 
 import styles from './Links.module.css';
 
-// import { handleLogout } from '@/lib/auth';
+import { handleLogout } from '@/lib/action';
+
 import NavLink from '@/components/navbar/navbarLinks/navLinks/navLinks';
 
 const links = [
@@ -32,18 +33,20 @@ const links = [
   },
 ];
 
-// interface LinksProps {
-//   session: any;
-// }
+interface LinksProps {
+  session?: {
+    user?: {
+      id: string;
+      isAdmin: boolean;
+    };
+  };
+}
 
-// : React.FC<LinksProps>
-
-const Links = () => {
+const Links: React.FC<LinksProps> = ({ session }) => {
   const [open, setOpen] = useState(false);
 
   // TEMPORARY
-  const session = true;
-  const isAdmin = true;
+  // const isAdmin = true;
 
   return (
     <div className={styles.container}>
