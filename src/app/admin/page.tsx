@@ -11,6 +11,7 @@ import AdminUsers from '@/components/adminUsers/adminUsers';
 
 const AdminPage = async () => {
   const session = await auth();
+  const userId = session?.user?.id ?? '';
 
   return (
     <div className={styles.container}>
@@ -21,7 +22,7 @@ const AdminPage = async () => {
           </Suspense>
         </div>
         <div className={styles.col}>
-          <AdminPostForm userid={session?.user?.id} />
+          <AdminPostForm userid={userId} />
         </div>
       </div>
       <div className={styles.row}>

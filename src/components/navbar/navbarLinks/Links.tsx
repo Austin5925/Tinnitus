@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
-import { useState } from 'react';
+import { Session } from 'next-auth';
+import React, { useState } from 'react';
 
 import styles from './Links.module.css';
 
@@ -34,19 +34,18 @@ const links = [
 ];
 
 interface LinksProps {
-  session?: {
-    user?: {
-      id: string;
-      isAdmin: boolean;
-    };
+  session: Session | null;
+}
+
+interface CustomSession extends Session {
+  user: {
+    id: string;
+    isAdmin: boolean;
   };
 }
 
 const Links: React.FC<LinksProps> = ({ session }) => {
   const [open, setOpen] = useState(false);
-
-  // TEMPORARY
-  // const isAdmin = true;
 
   return (
     <div className={styles.container}>
@@ -56,7 +55,7 @@ const Links: React.FC<LinksProps> = ({ session }) => {
         ))}
         {session?.user ? (
           <>
-            {session.user?.isAdmin && (
+            {session.user.isAdmin && (
               <NavLink item={{ name: 'Admin', path: '/admin' }} />
             )}
             <form action={handleLogout}>
@@ -85,43 +84,5 @@ const Links: React.FC<LinksProps> = ({ session }) => {
     </div>
   );
 };
-
-//   return (
-//     <div className={styles.container}>
-//       <div className={styles.links}>
-//         {links.map((link) => (
-//           <NavLink item={link} key={link.name} />
-//         ))}
-//         {session?.user ? (
-//           <>
-//             {session.user?.isAdmin && (
-//               <NavLink item={{ name: 'Admin', path: '/admin' }} />
-//             )}
-//             {/* <form action={handleLogout}>
-//               <button className={styles.logout}>Logout</button>
-//             </form> */}
-//           </>
-//         ) : (
-//           <NavLink item={{ name: 'Login', path: '/login' }} />
-//         )}
-//       </div>
-//       <Image
-//         className={styles.menuButton}
-//         src='/menu.png'
-//         alt=''
-//         width={30}
-//         height={30}
-//         onClick={() => setOpen((prev) => !prev)}
-//       />
-//       {open && (
-//         <div className={styles.mobileLinks}>
-//           {links.map((link) => (
-//             <NavLink item={link} key={link.name} />
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
 
 export default Links;

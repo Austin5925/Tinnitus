@@ -6,7 +6,7 @@ import styles from './postCard.module.css';
 import { Post } from '@/lib/types/post';
 
 const PostCard = ({ post }: { post: Post }) => {
-  //注意解构赋值不要用于传参
+  // 注意解构赋值不要用于传参
   const { _id, img, createdAt, title, desc, slug } = post;
 
   return (

@@ -14,8 +14,6 @@ import { siteConfig } from '@/constant/config';
 const Navbar = lazy(() => import('@/components/navbar/Navbar'));
 // 动态导入 Navbar 组件
 
-// !STARTERCONF Change these default meta
-// !STARTERCONF Look at @/constant/config to change them
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {

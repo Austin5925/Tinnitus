@@ -14,17 +14,6 @@ interface Params {
   };
 }
 
-// FETCH DATA WITH AN API
-// const getData = async (slug: string) => {
-//   const res = await fetch(`http://localhost:3000/api/archives/${slug}`);
-
-//   if (!res.ok) {
-//     throw new Error('Something went wrong');
-//   }
-
-//   return res.json();
-// };
-
 export const generateMetadata = async ({ params }: Params) => {
   const { slug } = params;
 
@@ -36,30 +25,9 @@ export const generateMetadata = async ({ params }: Params) => {
   };
 };
 
-// export async function getServerSideProps({ params }: Params) {
-//   const { slug } = params;
-//   const post = await getPost(slug);
-
-//   if (!post) {
-//     return {
-//       notFound: true,
-//     };
-//   }
-
-//   const user = (await getUser(post.userid)) || {
-//     img: '/noavatar.png',
-//     username: 'Unknown',
-//   };
-
-//   return {
-//     props: { post, user },
-//   };
-// }
-
 const SinglePostPage = async ({ params }: Params) => {
   const { slug } = params;
 
-  // FETCH DATA WITHOUT AN API
   const postOri: Post = await getPost(slug);
   if (!postOri) {
     return {

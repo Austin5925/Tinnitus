@@ -4,26 +4,11 @@ import styles from './postUser.module.css';
 
 import { getUser } from '@/lib/data';
 
-// FETCH DATA WITH AN API
-// const getData = async (userid) => {
-//   const res = await fetch(`https://jsonplaceholder.typicode.com/users/${userid}` ,{cache:"no-store"});
-
-//   if (!res.ok) {
-//     throw new Error("Something went wrong");
-//   }
-
-//   return res.json();
-// };
-
 interface PostUserProps {
   userid: string;
 }
 
 const PostUser = async ({ userid }: PostUserProps) => {
-  // FETCH DATA WITH AN API
-  // const user = await getData(userid);
-
-  // FETCH DATA WITHOUT AN API
   console.log(userid);
   const user = await getUser(userid);
   if (!user) {

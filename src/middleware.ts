@@ -1,11 +1,28 @@
-import NextAuth from 'next-auth';
+// import { NextRequest, NextResponse } from 'next/server';
+// import { getToken } from 'next-auth/jwt';
 
-import { authConfig } from './lib/auth.config';
+export { auth as middleware } from '@/lib/auth';
 
-export default NextAuth(authConfig).auth;
+// // Middleware function to handle authentication
+// export async function middleware(request: NextRequest) {
+//   const token = await getToken({
+//     req: request,
+//     secret: process.env.NEXTAUTH_SECRET || 'default-secret',
+//     salt: 'default-salt',
+//   });
 
-export const config = {
-  matcher: ['/((?!api|static|.*\\..*|_next).*)'],
-};
+//   const isOnAdminPanel = request.nextUrl.pathname.startsWith('/admin');
+//   const isOnLoginPage = request.nextUrl.pathname.startsWith('/login');
 
-// FOR MORE INFORMATION CHECK: https://nextjs.org/docs/app/building-your-application/routing/middleware
+//   // ONLY ADMIN CAN REACH THE ADMIN DASHBOARD
+//   if (isOnAdminPanel && (!token || !token.isAdmin)) {
+//     return NextResponse.redirect(new URL('/login', request.url));
+//   }
+
+//   // ONLY UNAUTHENTICATED USERS CAN REACH THE LOGIN PAGE
+//   if (isOnLoginPage && token) {
+//     return NextResponse.redirect(new URL('/', request.url));
+//   }
+
+//   return NextResponse.next();
+// }

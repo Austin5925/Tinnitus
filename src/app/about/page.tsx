@@ -26,8 +26,8 @@ const teamMembers: Member[] = [
   },
   {
     name: 'Ausdin Zhou',
-    bio: 'Web3 Buidler, Crypto Nomad, Degen Pretender',
-    twitterID: 'Austin5925',
+    bio: 'Web3 Buidler, Crypto Nomad',
+    twitterID: 'Ausdin5925',
   },
 ];
 
